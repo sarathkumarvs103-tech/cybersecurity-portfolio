@@ -7,3 +7,8 @@
 
 ## Skills shown
 Python · local LLM operation · data protection by design · AI governance (ISO/IEC 42001)
+
+## Code
+- [`src/KUTTU_AGENT_GUI.py`](src/KUTTU_AGENT_GUI.py) – Tkinter desktop agent for local OpenAI-compatible model servers (LM Studio, Ollama, llama.cpp); selectable agent roles; file tools; **Approve / Skip** bar before any file write or command
+- [`src/kuttu_agent_config.json`](src/kuttu_agent_config.json) – local server endpoints (127.0.0.1 only) and agent roles
+- [`src/KUTTU_AGENT.bat`](src/KUTTU_AGENT.bat) – launcher

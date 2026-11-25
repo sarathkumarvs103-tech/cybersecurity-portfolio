@@ -11,3 +11,9 @@ Many access-control systems still use cards that can be copied. Understanding th
 
 ## Skills shown
 RFID/NFC · physical security · Python · tool development
+
+## Code
+- [`src/proxmark3_gui.py`](src/proxmark3_gui.py) – Windows GUI (Python 3, Tkinter): card catalogue for LF/HF card families, auto-detect (`lf search` / `hf search`), read, clone, edit and format buttons enabled per card type, raw command console
+- [`src/SETUP.txt`](src/SETUP.txt) – installation and usage guide
+
+Run: `python src/proxmark3_gui.py` (optional: `pip install pyserial` for automatic COM-port detection)

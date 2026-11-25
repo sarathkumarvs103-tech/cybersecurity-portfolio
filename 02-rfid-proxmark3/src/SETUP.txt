@@ -1,0 +1,84 @@
+===========================================================
+ Proxmark3 Control - kuttu edition   (Windows GUI)
+===========================================================
+For: Proxmark3 Easy, 512 KB  ->  full Iceman/RRG firmware fits, no features lost.
+
+
+-----------------------------------------------------------
+ PART 1 - GET THE SOFTWARE + FIRMWARE (one time)
+-----------------------------------------------------------
+The "software" and "firmware" are the same project: the Iceman fork
+(RfidResearchGroup / proxmark3).
+
+1. Download the pre-compiled Windows build:
+     https://proxmarkbuilds.org/
+   Pick:  "Latest RRG / Iceman generic build for Proxmark3 devices (non RDV4)"
+   (that line covers the Proxmark3 Easy).
+
+2. Unzip it, e.g. to  C:\ProxSpace\pm3\
+
+3. Plug in the Proxmark3. Windows gives it a COM port.
+   Find the number in Device Manager -> Ports (COM & LPT), e.g. COM5.
+
+4. FLASH THE FIRMWARE (updates the device to match the client):
+     - Open  pm3-flash-all.bat   (in the build folder), OR run in the pm3 shell:
+         .\pm3-flash-all
+     - If it waits "Waiting for Proxmark to appear", unplug/replug once.
+   Do this whenever you update the client, so client and firmware stay in sync.
+
+5. Quick test (optional) - open pm3.bat and type:
+         hw ver      (shows firmware version)
+         hw tune     (antenna check - numbers should look healthy)
+
+
+-----------------------------------------------------------
+ PART 2 - RUN THE GUI
+-----------------------------------------------------------
+1. Install Python 3 for Windows if you don't have it:
+     https://www.python.org/downloads/   (tick "Add Python to PATH")
+   tkinter is included - nothing else required.
+
+2. (Optional, nicer) auto-list COM ports:
+         pip install pyserial
+   Without it, you just type the port (COM5) yourself.
+
+3. Double-click  proxmark3_gui.py   (or run:  python proxmark3_gui.py )
+
+4. In the app:
+     - Client:  point to proxmark3.exe  (e.g. C:\ProxSpace\pm3\proxmark3.exe)
+     - Port:    pick/enter your COM port
+     - Press "Test connection"  -> should say connected.
+
+
+-----------------------------------------------------------
+ PART 3 - HOW TO USE IT
+-----------------------------------------------------------
+- Left list  = every card family the device supports (LF + HF).
+  Click any card to read a plain description + see what it allows.
+
+- "Auto-detect card": place a card on the antenna, press it.
+  The app runs lf search then hf search, names the card, grabs its UID.
+
+- "What you can do" buttons light up per card:
+     Read / Details   -> always
+     Clone            -> only if the card can be copied (needs a blank:
+                         T5577 for LF, a magic card for HF)
+     Edit             -> write/change a block
+     Format           -> wipe the card
+  Greyed-out = not possible (e.g. DESFire, iCLASS Seos, EMV = read-only).
+
+- "Raw command" tab: type ANY Iceman command yourself (hw tune, lf search,
+  hf mf autopwn, ...). The GUI just runs the real client - you can always
+  fall back to full manual control.
+
+
+-----------------------------------------------------------
+ NOTES
+-----------------------------------------------------------
+- Command names target current Iceman firmware. If a command errors, the exact
+  syntax for that card may differ slightly on your build - the error text in
+  the console tells you, and you can tweak it in the Raw tab. Tell me and I'll
+  adjust the button.
+- Blanks you'll want to buy: T5577 cards/fobs (LF cloning) and
+  "magic" MIFARE Gen1a/Gen2 cards (HF cloning).
+- Only use this on cards you own or are authorised to test.
