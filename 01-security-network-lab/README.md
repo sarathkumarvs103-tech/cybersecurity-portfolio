@@ -2,6 +2,9 @@
 
 A small company network ("KUTTU Enterprise") built at home to practise system administration, network security and log monitoring.
 
+## Network diagram
+![Lab network diagram](network-diagram.svg)
+
 ## Setup
 - **Server:** Dell PowerEdge R450 (Intel Xeon Silver, 128 GB RAM, 10 GbE NIC) running **VMware ESXi 7** and **vCenter**
 - **Firewall / gateway:** **OPNsense** on bare metal – DHCP for the lab, DNS forwarded to the domain controller
