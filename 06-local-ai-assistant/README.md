@@ -1,5 +1,7 @@
 # 06 – Local AI Assistant without Cloud (10/2026 – today)
 
+![Architecture](architecture.svg)
+
 ## What I did
 - Run large language models fully **offline** with **llama.cpp** and **Ollama** – no data sent to cloud services
 - Built my own **Python agent** with a desktop GUI that connects to local model servers

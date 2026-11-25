@@ -1,5 +1,7 @@
 # 02 – RFID Security Analysis with Proxmark3 (11/2026)
 
+![Workflow](workflow.svg)
+
 Security testing of RFID/NFC access cards – directly linked to my previous work running electronic locking and access-control systems at Frankfurt Airport.
 
 ## What I did

@@ -1,5 +1,7 @@
 # 03 – Hardware Reverse Engineering of Routers & IoT Devices (09/2026)
 
+![Workflow](workflow.svg)
+
 ## What I did
 - Located debug interfaces (**UART**) on router and IoT boards and connected via a **CP2102** USB-UART adapter
 - Read firmware from **SPI flash** chips with a **CH341A** programmer
